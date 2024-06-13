@@ -16,6 +16,7 @@ jobs:
           distribution: 'graalvm'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           native-image-job-reports: 'true'
+          cache: 'gradle'
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: Gradle agent native build
