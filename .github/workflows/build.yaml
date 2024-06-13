@@ -1,0 +1,24 @@
+name: Native Image build
+on: [push, pull_request]
+jobs:
+  build:
+    name: build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Java
+        uses: graalvm/setup-graalvm@v1
+        with:
+          java-version: '21'
+          distribution: 'graalvm'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          native-image-job-reports: 'true'
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: Gradle agent native build
+        run: ./gradlew agent:nativeCompile agent:nativeBuild
+      - name: Gradle lever native build
+        run: ./gradlew lever:nativeCompile lever:nativeBuild
