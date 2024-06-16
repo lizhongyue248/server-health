@@ -10,7 +10,7 @@ group = "wiki.zyue"
 version = "0.0.1-SNAPSHOT"
 
 dependencies {
-    implementation(libs.oshi.core)
+    implementation(project(":shared"))
     implementation(libs.bundles.spring.boot)
     implementation(libs.bundles.kotlin.support)
     developmentOnly(libs.spring.boot.devtools)

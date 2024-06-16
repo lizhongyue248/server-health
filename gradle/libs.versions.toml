@@ -12,6 +12,7 @@ spring-boot-webflux = { module = "org.springframework.boot:spring-boot-starter-w
 spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools" }
 spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 spring-boot-testcontainers = { module = "org.springframework.boot:spring-boot-testcontainers" }
+spring-boot-configuration = { module = "org.springframework.boot:spring-boot-configuration-processor" }
 reactor-test = { module = "io.projectreactor:reactor-test" }
 kotlin-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5" }
 testcontainer-junit = { module = "org.testcontainers:junit-jupiter" }
@@ -21,6 +22,7 @@ oshi-core = { module = "com.github.oshi:oshi-core", version.ref = "oshi" }
 [bundles]
 spring-boot = [
     "spring-boot-rocket",
+    "spring-boot-configuration",
     "spring-boot-webflux"
 ]
 kotlin-support = [

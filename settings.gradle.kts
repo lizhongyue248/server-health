@@ -23,3 +23,4 @@ dependencyResolutionManagement {
 rootProject.name = "server-health"
 include("agent")
 include("lever")
+include("shared")
