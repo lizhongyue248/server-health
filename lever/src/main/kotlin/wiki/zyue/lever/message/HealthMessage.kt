@@ -1,9 +1,8 @@
-package wiki.zyue.lever.controller
+package wiki.zyue.lever.message
 
 import org.springframework.messaging.handler.annotation.MessageMapping
 import org.springframework.messaging.handler.annotation.Payload
 import org.springframework.stereotype.Controller
-import reactor.core.publisher.Mono
 import wiki.zyue.shared.modal.AgentInformation
 import wiki.zyue.shared.modal.Route
 
@@ -12,9 +11,8 @@ import wiki.zyue.shared.modal.Route
 class HealthMessage {
 
     @MessageMapping(Route.REPORT)
-    fun message(@Payload input: AgentInformation): Mono<Unit> {
+    fun message(@Payload input: AgentInformation) {
         println(input)
-        return Mono.empty();
     }
 
 }
